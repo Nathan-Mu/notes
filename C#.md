@@ -1,5 +1,7 @@
 # C# Notes
 
+[TOC]
+
 ## Reading and writing to console
 
 ```c#
@@ -175,6 +177,104 @@ for (int i = 0; i < 10; i++) {
 int[] numbers = {1, 2, 3};
 foreach (int i in numbers) {
 	Console.WriteLine(i);
+}
+```
+
+## Types of method parameters
+
+- value parameters
+
+  ```c#
+  using System;
+  class Program {
+      public static void Main() {
+          int i = 0;
+          Method(i);
+          Console.WriteLine(i);
+          // result : 0
+      }
+      
+      public static void Method(int j) {
+          j = 100;
+      }
+  }
+  ```
+
+- reference parameters
+
+  ```c#
+  using System;
+  class Program {
+      public static void Main() {
+          int i = 0;
+          Method(ref i);
+          Console.WriteLine(i);
+          // result : 100
+      }
+      
+      public static void Method(ref int j) {
+          j = 100;
+      }
+  }
+  ```
+
+- out parameters
+
+  ```c#
+  using System;
+  class Program {
+      public static void Main() {
+          int total = 0;
+          int product = 0;
+          Method(10, 20, out total, out product);
+          Console.WriteLine("Sum = {0}, Product = {1}", total, product);
+          // result : Sum = 30, Product = 200
+      }
+      
+      public static void Method(int fn, int sn, out int sum, out int product) {
+          sum = fn + sn;
+          product = fn * sn;
+      }
+  }
+  ```
+
+- parameter arrays
+
+  ```c#
+  using System;
+  class Program {
+      public static void Main() {
+          Method(1, 2, 3, 4);
+          // result: 4
+      }
+      
+      public static void Method(params int[] numbers) {
+          Console.WriteLine(numbers.Lenght);
+      }
+  }
+  ```
+
+## namespace
+
+```c#
+using System;
+using PATA = ProjectA.TeamA;
+
+class Program {
+    public static void Main() {
+        PATA.ClassA.Print();
+        // or ClassA.Print();
+    }
+}
+
+namespace ProjectA {
+    namespace TeamA {
+        class ClassA {
+            public static void Print() {
+                Console.WriteLine("Team A print method");
+            }
+        }
+    }
 }
 ```
 
