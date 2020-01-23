@@ -18,3 +18,24 @@ class Program {
 }
 ```
 
+## Built-in Data Type
+
+- Boolean - bool
+- Integral - char, int, long
+- Floating-point - float, double
+- Decimal - decimal
+- String - string
+
+## String (backslash)
+
+```c#
+String s = "C:\\Nathan\\Documents";
+```
+
+or with verbatim literal
+
+```c#
+String s = @"C:\Nathan\Documents";
+```
+
+**Verbatim literal**, is a string with an @ symbol prefix, as in @"Hello". **Verbatim literals** make escape sequences translate as normal printable characters to enhance readability. 
