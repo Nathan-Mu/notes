@@ -278,15 +278,105 @@ namespace ProjectA {
 }
 ```
 
+## Inheritance
+
+```c#
+public class Employee {
+    string firstName;
+    string lastName;
+    string email;
+    
+    public void PrintFullName() {
+        // do something
+    }
+}
+
+public class FullTimeEmployee : Employee {
+    float yearlySalary;
+}
+
+public class PartTimeEmployee : Employee {
+    float hourlyRate;
+}
+```
+
+```c#
+public class Parent {
+    public Parent() {}
+    public Parent(string s) {}
+}
+
+public class Child : Parent {
+    public Child() : base("message") {}
+}
+```
 
 
 
+## Pillars of Object Oriented Programming
 
+1. Inheritance
+2. Encapsulation
+3. Abstraction
+4. Polymorphism
 
+## Override
 
+```c#
+public class Employee {
+    public virtual void Print() {
+        Console.WriteLine("Employee");
+    }
+}
 
+public class FullTimeEmployee : Employee {
+    public override void Print() {
+        Console.WriteLine("Full Time Employee");
+    }
+}
+```
 
+## Auto Implemented Properties
 
+```c#
+public class Employee {
+    public string firstName {get; set;}
+    public string lastName {get; set;}
+}
+```
+
+## Properties
+
+```c#
+public class Employee {
+    private string firstName;
+    
+    public string firstName {
+        get { return this.firstName;}
+        set { this,firstName = value;}
+    }
+}
+```
+
+## Object Initializer Syntax
+
+```c#
+using System;
+
+public class Employee {
+    public firstName { get; set;}
+	public lastName { get; set;}
+}
+
+public class Program {
+	public static void Main() {
+        Employee e = new Employee {
+            firstName = "fn", 
+            lastName = "ln"
+        };
+    }
+}
+```
 
 
 
