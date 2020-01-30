@@ -215,3 +215,69 @@ public MainPage() {
 ```
 
 <img src="F:\notes\xamarin_forms\AbsoluteLayout.png" style="zoom:25%;" />
+
+## Absolute Layout in Code
+
+```c#
+public MainPage() {
+    InitializeComponent();
+    var layout = new AbsoluteLayout();
+    var aquaBox = new BoxView { Color = Color.Aqua };
+    layout.Children.Add(aquaBox, new Rectangle(0, 0, 1, 1), AbsoluteLayoutFlags.All);
+	Content = layout;
+}
+```
+
+## Relative Layout
+
+```xaml
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="HelloWorld.MainPage">
+    
+	<RelativeLayout>
+        <BoxView Color="Aqua" x:Name="banner"
+                 RelativeLayout.WidthConstraint="{ConstraintExpression 
+                                                 Type=RelativeToParent, 
+                                                 Property=Width,
+                                                 Factor=1}"
+                 RelativeLayout.HeightConstraint="{ConstraintExpression 
+                                                  Type=RelativeToParent, 
+                                                  Property=Height,
+                                                  Factor=0.3}" />
+		<BoxView Color="Silver"
+                 RelativeLayout.YConstraint="{ConstraintExpression
+                                             Type=RelativeToView,
+                                             ElementName=banner,
+                                             Property=Height,
+                                             Factor=1,
+                                             Constant=20}"/>
+    </RelativeLayout>
+
+</ContentPage>
+```
+
+<img src="F:\notes\xamarin_forms\RelativeLayout.PNG" style="zoom: 25%;" />
+
+## Relative Layout in Code
+
+```c#
+public MainPage() {
+    InitializeComponent();
+    var layout = new RelativeLayout();
+    var aquaBox = new BoxView { Color = Color.Aqua };
+    layout.Children.Add(
+        aquaBox,
+        widthConstraint: Constraint.RelativeToParent(parent => parent.Width),
+        heightConstraint: Constraint.RelativeToParent(parent => parent.Height));
+    var silverBox = new BoxView { Color = Color.Silver };
+    layout.Children.Add(
+    	silverBox, 
+        yConstraint: Constraint.RelativeToView(
+            auqaBox, 
+            (parent, aquaBox) => aquaBox.Height + 20);
+    );
+}
+```
+
