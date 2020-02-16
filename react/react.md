@@ -17,7 +17,7 @@ const person = (props) => {
 }
 ```
 
-## React Hooks - useState()
+### React Hooks - useState()
 
 ```react
 import React, {useState} from 'react';
@@ -50,7 +50,7 @@ const app = props => {
     
     return (
     	<div>
-        	<button onClick={handleClick}/>
+            <button onClick={handleClick}>Switch</button>
             <p>Name: {personsState.persons[0].name}, 
                 age: {personsState.persons[0].age}</p>
             <p>Name: {personsState.persons[1].name}, 
@@ -64,5 +64,40 @@ const app = props => {
 export default app;
 ```
 
+### Stateful & stateless components
 
+### 2 ways of passing parameter (bind & anonymous function)
+
+```react
+class App extends Component {
+    state = {
+        name: 'Max'
+    };
+    
+    const handleClick = (newName) => {
+        this.setState({
+            name: newName
+        });
+    };
+
+	render() {
+        return (
+            <div>
+            	<div>{this.state.name}</div>
+                <!-- 1.bind (efficient) -->
+                <button onClick={this.handleClick.bind(this, 'Tom')}>Switch1</button>
+                <!-- 2.anonymous function (INEFFICIENT) -->
+                <button onClick={() => this.handleClick('Tom')}>Switch1</button>
+            </div>
+        ) 
+    }
+}
+```
+
+ 
+
+### cope an array
+
+1. `const numbers = this.state.numbers.slice()`
+2. `const numbers = [...this.state.numbers]`
 
