@@ -378,5 +378,136 @@ public class Program {
 }
 ```
 
+## Array
+
+Single Dimension Arrays
+
+```c#
+var numbers = new int[5];
+var numbers = new int[5]{1, 2, 3, 4, 5};
+```
+
+Multi Dimension Arrays: Rectangular & Jagged
+
+![](F:\notes\c#\rectangular vs jagged.png)
+
+Rectangular 2D:
+
+```c#
+var matrix = new int[3, 5];
+var matrix = new int[3, 5] {
+    {1, 2, 3, 4, 5},
+    {6, 7, 8, 9, 10},
+    {11, 12, 13, 14, 15}
+};
+var element = matrix[0, 0];
+```
+
+Rectangular 3D:
+
+```c#
+var colors = new int[3, 5, 3];
+```
+
+ Jagged:
+
+```c#
+var array = new int[3][];
+array[0] = new int[4];
+array[1] = new int[5];
+array[2] = new int[3];
+array[0][0] = 1;
+```
+
+methods of array
+
+```c#
+static void Main(String[] args) {
+    var numbers = new[] {3, 5, 7, 9, 11};
+    // Length
+    Console.WriteLine("Length: {0}", numbers.Length);
+    // Output: Length: 5
+    
+    // IndexOf()
+    var index = Array.IndexOf(numbers, 9);
+    Console.WriteLine("Index of 9: {0}", index);
+    // Output: Index of 9: 3
+    
+    // Clear()
+    Array.Clear(number, 0, 2);
+    // value of numbers: {0, 0, 7, 9, 11}
+    
+    // Copy() 
+    int[] another = new int[3];
+    Array.Copy(numbers, another, 3);
+    // value of another: {0, 0, 7}
+    
+    // Sort()
+    var anotherNumbers = new[] {4, 3, 6};
+    Array.Sort(numbers);
+    // value of anotherNumbers: {3, 4, 6}
+    
+    // Reverse()
+    Array.Reverse(anotherNumbers);
+    // value of anotherNumbers: {6, 4, 3}
+}
+```
+
+## Lists
+
+### Creating Lists
+
+```c#
+var numbers = new List<int>();
+var numbers = new List<int>() {1, 2, 3, 4, 5};
+```
+
+### Useful Methods
+
+- Add()
+- AddRange()
+- Remove()
+- RemoveAt()
+- IndexOf()
+- Contains()
+- Count
+
+### Example
+
+```c#
+static void Main(string[] args) {
+    var numbers = new List<int>() {1, 2, 3, 4, 5};
+    numbers.Add(1);
+    numbers.AddRange(new int[3] {5, 6, 7});
+    // now the value of numbers is {1, 2, 3, 4, 5, 1, 5, 6, 7}
+    
+    Console.WriteLine("Index of 1: {0}", numbers.IndexOf{1});
+    // Output: Index of 1: 0
+    
+    Console.WriteLine("Last index of 1: {0}", numbers.LastIndexOf{1});
+    // Output: Last index of 1: 5
+    
+    Console.WriteLine("Count: {0}", numbers.Count);
+    // Output: Count: 9
+    
+    Console.Remove(1);
+    // value of numbers: {2, 3, 4, 5, 1, 5, 6, 7}
+    
+    numbers.Clear();
+    Console.WriteLine("Count: {0}", numbers.Count);
+    // Output: Count: 0
+}
+```
+
+
+
+
+
+
+
+
+
+
+
 
 
