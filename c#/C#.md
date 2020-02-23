@@ -499,15 +499,142 @@ static void Main(string[] args) {
 }
 ```
 
+## String
+
+### Properties
+
+#### Chars(Int32)
+
+```c#
+var str = "123";
+char c = str[2]; // '3'
+```
+
+### Methods
+
+#### Trim
+
+```c#
+var str = " abc ";
+Console.WriteLine("'{0}'", str.Trim());
+// output: 'abc'
+```
+
+#### ToUpper
+
+```c#
+var str = "abc";
+Console.WriteLine(str.ToUpper());
+// output: ABC
+```
+
+#### IndexOf
+
+`IndexOf(char value)`
+
+```c#
+var str = "abc";
+Console.WriteLine(str.IndexOf('a'));
+// output: 0
+```
+
+#### Substring
+
+1. `Substring(int startIndex)`
+
+2. `Substring(int startIndex, int length)`
+
+   the result will contain start index
+
+```c#
+var str = "abcdef";
+Console.WriteLine(str.Substring(3));
+Console.WriteLine(str.Substring(1,2));
+// def
+// bc
+```
+
+#### Split
+
+`Split(char value)`
+
+```c#
+var str = "abc def";
+var subStrings = str.Split(' ');
+Console.WriteLine($"First: '{subStrings[0]}', Second: '{subStrings[1]}'");
+// First: 'abc', Second: 'def'
+```
+
+#### Replace
+
+1. `Replace(char oldValue, char newValue)`
+2. `Replace(string oldValue, string? newValue)` 
+
+```c#
+var str = "abc def";
+Console.WriteLine(str.Replace('a', '1'));
+Console.WriteLine(str.Replace("ab", null));
+// 1bc def
+// c def
+```
+
+#### static IsNullOrEmpty
+
+```c#
+var b1 = String.IsNullOrEmpty(""); // true
+var b2 = String.IsNullOrEmpty("   ".Trim()); // true
+```
+
+#### static IsNullOrWhiteSpace
+
+```c#
+var b3 = String.IsNullOrWhiteSpace("   "); // true
+```
+
+### Convert string to number/number to string
+
+```c#
+var str = "25";
+var age = Convert.ToInt32(str); // 25
+
+float price = 29.95f;
+Console.WriteLine(price.ToString("C1")); // $ 30.0
+```
+
+## StringBuilder
+
+used to manipulate string (saving memory)
+
+### properties
+
+#### Chars[Int32]
+
+```c#
+var sb = new StringBuilder("123");
+char c = sb[0]; // '1'
+```
+
+### methods
+
+1. Append
+2. AppendLine
+3. Replace
+4. Remove
+5. Insert
+
+### Chain methods altogether
+
+```c#
+var sb = new StringBuilder("abc").Append("def").Insert(0, "1234").Replace('c', 'x');
+Console.WriteLine(sb);
+// 1234abxdef
+```
 
 
 
 
 
-
-
-
-
+ 
 
 
 
