@@ -96,8 +96,62 @@ class App extends Component {
 
  
 
-### cope an array
+### copy an array
 
 1. `const numbers = this.state.numbers.slice()`
 2. `const numbers = [...this.state.numbers]`
+
+
+
+## 2. React Lifecycle
+
+### Side Effect
+
+A "side effect" is anything that **affects something outside the scope of the function being executed**. These can be, say, **a network request**, which has your code communicating with a third party (and thus making the request, causing logs to be recorded, caches to be saved or updated, all sorts of effects that are outside the function.
+
+There are more subtle side effects, too. Changing the value of a closure-scoped variable is a side effect. Pushing a new item onto an array that was passed in as an argument is a side effect. Functions that execute without side effects are called "pure" functions: they take in arguments, and they return values. Nothing else happens upon executing the function. This makes the easy to test, simple to reason about, and functions that meet this description have all sorts of useful properties when it comes to optimization or refactoring.
+
+Pure functions are deterministic (meaning that, given an input, they always return the same output), but that doesn't mean that all impure functions have side effects. Generating a random value within a function makes it impure, but isn't a side effect, for example. React is all about pure functions, and asks that you keep several lifecycle methods pure, so these are good questions to be asking.
+
+### React Common Lifecycles
+
+http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+![](F:\notes\react\pics\react_common_lifecycles.png)
+
+### React Lifecycles
+
+![](F:\notes\react\pics\react_whole_lifecycles.png)
+
+### Component Lifecycle - Creation
+
+![](F:\notes\react\pics\Component Lifecycle - Creation.png)
+
+### Component Lifecycle - Update
+
+![](F:\notes\react\pics\Component Lifecycle - Update.png)
+
+### static getDerivedStateFromProps()
+
+This method will return a updated state. For example:
+
+```react
+static getDerivedStateFromProps(props, state) {
+    return state; // return a state object and it should be updated in a real application
+}
+```
+
+In this method, normally we sync state from new props. However, it method would rarely be called in a real application. 
+
+### getSnapshotBeforeUpdate() & componentDidUpdate() 
+
+```react
+getSnapshotBeforeUpdate(prevProps, prevState) {
+    return { message: 'Snapshot'}
+}
+
+componentDidUpdate(prevProps, prevState, snapshot) {
+    console.log(snapshot);
+}
+```
 
