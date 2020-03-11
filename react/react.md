@@ -155,3 +155,25 @@ componentDidUpdate(prevProps, prevState, snapshot) {
 }
 ```
 
+## 3. es6 refresher
+
+### let & const
+
+`var`: function scope
+
+`let`: block scope
+
+`const`: block scope, cannot be reassigned a value
+
+### Deconstructing
+
+```react
+const address = {
+    street: '',
+    city: '',
+    country: ''
+}
+const {street, city, country} = address;
+const {street:st} = address;
+```
+
