@@ -409,3 +409,78 @@ var random = getRandom.get();
 System.out.println(random);
 ```
 
+### Function Interface
+
+```java
+Function<String, Integer> map = str -> str.length();
+Integer length = map.apply("Sky");
+System.out.println(length);
+```
+
+### Composing Functions
+
+```java
+Function<String, String> addPrefix = str -> "Name=" + str;
+Function<String, String> addBraces = str -> "{" + str + "}";
+String result = addPrefix.andThen(addBraces).apply("Tom");
+result = addBraces.compose(addPrefix).apply("Tom");
+System.out.println(result);
+```
+
+### Predicate Interface
+
+```java
+Predicate<String> isLongerThan5 = str -> str.length() > 5;
+boolean result = isLongerThan5.test("sky");
+```
+
+### Combining Predicates
+
+```java
+Predicate<String> hasLeftBrace = str -> str.startsWith("{");
+Predicate<String> hasRightBrace = str -> str.endsWith("}");
+boolean hasLeftAndRightBrace = hasLeftBrace.and(hasRightBrace).test("{}");
+boolean hasLeftOrRightBrace = hasLeftBrace.or(hasRightBrace).test("{}");
+boolean notHasLeft = hasLeftBrace.negate().test("{}");
+```
+
+### BinaryOperator & UnaryOperator
+
+```java
+BinaryOperator<Integer> add = (a, b) -> a + b;
+UnaryOperator<Integer> square = a -> a * a;
+Integer result = add.andThen(square).apply(1, 2); 
+```
+
+## 5. Streams
+
+### Imperative Programming
+
+```java
+List<Movie> movies = List.of(
+	new Movie("a", 10),
+    new Movie("b", 15),
+    new Movie("c", 20)
+);
+
+int count = 0;
+for (Movie movie: movies) {
+    if (movie.getLikes() > 10)
+        count++;
+}
+```
+
+### Declarative (Functional) Programming
+
+```java
+List<Movie> movies = List.of(
+	new Movie("a", 10),
+    new Movie("b", 15),
+    new Movie("c", 20)
+);
+
+int count = movies.stream()
+    			.fliter(movie -> movie.getLikes() > 10)
+    			.count();
+```
+
