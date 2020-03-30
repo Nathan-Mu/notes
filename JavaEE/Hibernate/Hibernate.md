@@ -1,3 +1,7 @@
+---
+typora-copy-images-to: upload
+---
+
 # Hibernate
 
 ## What is Hibernate?
@@ -197,4 +201,4 @@ Hibernate 把对象分为 4 种状态: **持久化状态, 临时状态, 游离�
 
 ### 状态转换
 
-![](pics/object status transformation.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/hibernate_object_status_transfer.png)
