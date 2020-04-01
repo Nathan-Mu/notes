@@ -389,7 +389,7 @@ var numbers = new int[5]{1, 2, 3, 4, 5};
 
 Multi Dimension Arrays: Rectangular & Jagged
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/c#/rectangular_vs_jagged.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/c#/rectangular_vs_jagged.png)
 
 Rectangular 2D:
 

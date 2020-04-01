@@ -117,19 +117,19 @@ Pure functions are deterministic (meaning that, given an input, they always retu
 
 http://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/react/react_common_lifecycles.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/react/react_common_lifecycles.png)
 
 ### React Lifecycles
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/react/react_whole_lifecycles.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/react/react_whole_lifecycles.png)
 
 ### Component Lifecycle - Creation
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/react/Component_Lifecycle_Creation.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/react/Component_Lifecycle_Creation.png)
 
 ### Component Lifecycle - Update
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/react/Component_Lifecycle_Update.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/react/Component_Lifecycle_Update.png)
 
 ### static getDerivedStateFromProps()
 

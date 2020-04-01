@@ -203,7 +203,7 @@ Hibernate 把对象分为 4 种状态: **持久化状态, 临时状态, 游离�
 
 ### 状态转换
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/hibernate/object_status_transfer.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/hibernate/object_status_transfer.png)
 
 
 
@@ -340,7 +340,7 @@ Hibernate 把对象分为 4 种状态: **持久化状态, 临时状态, 游离�
 
 ### `generator`的策略
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/hibernate/id_generator_strategies.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/hibernate/id_generator_strategies.png)
 
 ### `property`的属性
 
@@ -386,15 +386,15 @@ Hibernate 把对象分为 4 种状态: **持久化状态, 临时状态, 游离�
 
 ### Java 类型, Hibernate 映射类型及 SQL 类型的对应关系
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/hibernate/relationship_between_java_hibernate%26sql_type1.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/hibernate/relationship_between_java_hibernate%26sql_type1.png)
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/hibernate/relationship_between_java_hibernate%26sql_type2.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/hibernate/relationship_between_java_hibernate%26sql_type2.png)
 
 ### Java 大对象类型的 Hiberante 映射
 
 > ==保存图片，长文本==  *Hibernate - 10 23'00*
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/hibernate/java_big_type_in_hibernate.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/hibernate/java_big_type_in_hibernate.png)
 
 - `java.lang.String` 可用于表示长字符串(长度超过 255)
 - 字节数组 `byte[] `可用于存放图片或文件的二进制数据

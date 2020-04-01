@@ -114,7 +114,7 @@ public MainPage() {
 </ContentPage>
 ```
 
-<img src="https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/xamarin_forms/StackLayout.png" style="zoom:25%;" />
+<img src="https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/xamarin_forms/StackLayout.png" style="zoom:25%;" />
 
 ### Stack Layout in Code
 
@@ -165,7 +165,7 @@ public MainPage() {
 </ContentPage>
 ```
 
-<img src="https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/xamarin_forms/GridLayout.png" style="zoom:25%;" />
+<img src="https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/xamarin_forms/GridLayout.png" style="zoom:25%;" />
 
 ### Grid Layout in Code
 
@@ -217,7 +217,7 @@ public MainPage() {
 </ContentPage>
 ```
 
-<img src="https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/xamarin_forms/AbsoluteLayout.png" style="zoom:25%;" />
+<img src="https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/xamarin_forms/AbsoluteLayout.png" style="zoom:25%;" />
 
 ### Absolute Layout in Code
 
@@ -261,7 +261,7 @@ public MainPage() {
 </ContentPage>
 ```
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/xamarin_forms/RelativeLayout.PNG)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/xamarin_forms/RelativeLayout.PNG)
 
 ### Relative Layout in Code
 

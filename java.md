@@ -20,7 +20,7 @@
 
 ### Exception Hierarchy
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/java/exception_hierarchy.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/java/exception_hierarchy.png)
 
 ### Catching Exceptions
 
@@ -180,7 +180,7 @@ public static void addUsers(List<? super User> users) {
 
 ### Overview
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/java/collection_overview.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/java/collection_overview.png)
 
 ### Iterator
 
