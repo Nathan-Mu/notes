@@ -406,4 +406,4 @@ Hibernate 把对象分为 4 种状态: **持久化状态, 临时状态, 游离�
 
 ### Cascade
 
-![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/hibernate/hibernate_cascade.png)
+![](https://raw.githubusercontent.com/Nathan-Mu/img/master/notes/hibernate/hibernate_cascade.png)
