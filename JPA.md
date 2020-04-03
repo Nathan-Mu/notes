@@ -49,12 +49,6 @@
   - `catalog` 和 `schema`：设置表所属的数据库目录或模式，通常为数据库名
   - `uniqueConstraints` ：设置约束条件，通常不须设置。
 
-```java
-@Table(name="XXX_PERSONS")
-@Entity
-public class Person {}
-```
-
 ### `@Id`
 
 - 用于声明一个实体类的属性映射为数据库的主键列
@@ -103,7 +97,111 @@ public class Person {}
   - `TemporalType.TIME`
 
 ```JAVA
+@Table(name="XXX_PERSONS")
+@Entity
+public class Person {
+  @Id
+  @GeneratedValue(strategy=GenerationType.IDENTITY)
+  private long id;
+  @Column(name="FIRST_NAME")
+  private String firstName;
+  @Column(name="LAST_NAME")
+  private String lastName;
+  @Column(length=50)
+  private String email;
+  @Temporal(TemporalType.DATE)
+  private Date dateOfBirth;
+  
+  @Transient
+  public String getFullName() {
+    return firstName + " " + lastName;
+  }
+  
+  // other getters and setters
+  // ...
+}
+```
 
+## 关系映射
+
+### 双向多对一关系
+
+```java
+// Customer.java
+@OneToMany(
+  // fetch=FetchType.LAZY,
+  // cascade={CascadeType.REMOVE},
+  mappedBy="customer") // 由customer维持映射关系
+private set<Order> orders;
+
+// Order.java
+@JoinColumn(name="CUSTOMER_ID") // 外键
+@ManyToOne(
+  // fetch=FetchType.LAZY
+)
+private Customer customer;
+```
+
+- `@ManyToOne`: 多对一关系
+  - `fetch` 属性：加载策略
+- `@JoinColumn`： 外键
+  - `name`属性：此外键在此表中的名字
+
+
+
+- `@OneToMany`: 一对多关系
+  - `fetch`属性：加载策略
+  - `cascade`属性：删除策略
+  - `mappedBy`属性：由哪一方维护映射关系，通常选择“多”的一方
+
+
+
+### 双向一对一关系
+
+```java
+// Manager.java
+@OneToOne(mappedBy="mgr") // 不可以设置lazy
+private Department department;
+
+// Department.java
+@JoinColumn(name="MGR_ID", unique=true) // 可设置lazy
+@OneToOne
+private Manager mgr;
+```
+
+### 双向多对多关系
+
+两方中，有一方需要放弃维护关系
+
+```java
+// Item.java
+@JoinTable(name="ITEM_CATEGORY",
+           joinColumns={@JoinColumn(name="ITEM_ID", referencedColumnName="ID")},
+           inverseJoinColumns={@JoinColumn(name="CATEGORY_ID", referencedColumnName="ID")})
+@ManyToMany
+private Set<Category> categories;
+
+// Category.java
+@ManyToMany(mappedBy="categories") // 由Item类中的categories维护映射关系
+private Set<Item> items;
+```
+
+`jointable`
+
+```java
+@JoinTable(
+  name="中间表的名字",
+  joinColumns={
+    @JoinColumn(name="当前表主键对应的外键的名字", 
+                referencedColumnName="所对应的当前表的列名" // 可以不写
+               )
+  },
+  inverseJoinColumns={
+    @JoinColumn(name="另一个表主键对应的外键的名字", 
+                referencedColumnName="所对应的另一个表的列名" //可以不写
+               )
+  }
+)
 ```
 
 
