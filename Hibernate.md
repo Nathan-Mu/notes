@@ -404,3 +404,6 @@ Hibernate 把对象分为 4 种状态: **持久化状态, 临时状态, 游离�
 - 在持久化类中, 二进制大对象可以声明为 `byte[]` 或 `java.sql.Blob` 类型; 
 - 字符串可以声明为 `java.lang.String` 或 `java.sql.Clob`
 
+### Cascade
+
+![](https://raw.githubusercontent.com/Nathan-Mu/notes/master/.img/hibernate/hibernate_cascade.png)
