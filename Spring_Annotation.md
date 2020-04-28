@@ -229,3 +229,47 @@ public class Person {
 }
 ```
 
+## `@Value`
+
+1. basic string
+2. SpEL: `#{}`
+3. value defined in properties: `${}`
+
+```java
+public class Person {
+  @Value("Tom")
+  private String name;
+  @Value("#{20+2}")
+  private int age;
+  @Value("${person.email}")
+  private String email;
+  // ...
+}
+```
+
+```java
+@PropertySource(value={"classpath:/person.properties"})
+@Configuration
+public class MainConfig() {
+  @Bean
+  public Person person() { 
+    return new Person(); 
+  }
+}
+```
+
+## `@Autowired` + `@Qualifier`
+
+- `@Autowired(required=false)`
+- `@Qualifier("PersonService2018")`
+
+## `@Autowired` + `@Primary`
+
+```java
+@Primary
+@Service
+public class PersonService2018 {}
+```
+
+
+
