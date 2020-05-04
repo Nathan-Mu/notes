@@ -84,3 +84,32 @@ public class HelloWorldController {
         └── 📁 java
             └── 📦 com.example
                  └── 📄 DemoApplicationTests.java
+
+## 3. 配置文件
+
+默认的配置文件
+
+- `application.properties`
+- `application.yml`
+
+
+
+### `@ConfigurationProperties`
+
+将配置文件中的配置与类的属性绑定
+
+```java
+@Component
+@ConfigurationProperties(prefix="person")
+public class Person{
+  private String name;
+  private int age;
+}
+```
+
+```yaml
+person:
+	name: Tom
+	age: 29
+```
+
